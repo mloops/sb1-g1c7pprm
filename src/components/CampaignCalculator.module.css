@@ -1,0 +1,41 @@
+.gradientSlider {
+  @apply w-full appearance-none h-2 rounded-lg;
+}
+
+.gradientSlider::-webkit-slider-runnable-track {
+  @apply h-2 rounded-lg;
+  background: linear-gradient(to right, rgb(248 113 113), rgb(250 204 21), rgb(34 197 94));
+}
+
+.gradientSlider::-moz-range-track {
+  @apply h-2 rounded-lg;
+  background: linear-gradient(to right, rgb(248 113 113), rgb(250 204 21), rgb(34 197 94));
+}
+
+.gradientSlider::-webkit-slider-thumb {
+  @apply w-4 h-4 bg-blue-600 rounded-full cursor-pointer appearance-none;
+  -webkit-appearance: none;
+  margin-top: -4px; /* Center the thumb vertically */
+}
+
+.gradientSlider::-moz-range-thumb {
+  @apply w-4 h-4 bg-blue-600 border-0 rounded-full cursor-pointer;
+}
+
+/* Dark mode styles */
+:global(.dark) .gradientSlider::-webkit-slider-thumb {
+  @apply bg-blue-400;
+}
+
+:global(.dark) .gradientSlider::-moz-range-thumb {
+  @apply bg-blue-400;
+}
+
+/* Add styles for slider container to prevent event bubbling */
+:global(.slider-container) {
+  position: relative;
+  padding: 8px 0;
+  cursor: pointer;
+  z-index: 10;
+  display: block;
+}
